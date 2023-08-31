@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'MCfont';
+    src: url('./fonts/Minecraft.otf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MCfontBold';
+    src: url('./fonts/Minecraft-Bold.otf');
+}
+
+:root {
+    --theme-white: #ffffff;
+    --primary: #00aa00;
+    --primary-light: #f5fbef;
+    --theme-black-100: #090a0b;
+    --theme-black-50: #6b717e;
+    --theme-black-25: #bdc0c7;
+}
+
+body {
+    background-color: var(--primary-light);
+}
+
+/* -----------------LAYOUT -------------------*/
+.header > div {
+    height: 400px;
+    max-width: 1080px;
+    margin: auto;
+    text-align: center;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------------- STYLES -------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    border: solid 1px red;
+}
+
+/* HEADER MODULE */
+.header {
+    font-family: 'MCfontBold', 'Courier New', Courier, monospace;
+    color: var(--theme-white);
+    font-size: 3em;
+    background-image: url('./background_images/minecraft-cottagecore.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: bottom;
+}
