@@ -5,7 +5,8 @@ module.exports = {
     mode: 'development',
     entry: {
         index: './src/index.js',
-        home: './src/home.js'
+        home: './src/home.js',
+        menu: './src/menu.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -27,6 +28,10 @@ module.exports = {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+              },
         ],
     },
     optimization: {

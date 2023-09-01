@@ -17,6 +17,7 @@
     --theme-black-100: #090a0b;
     --theme-black-50: #6b717e;
     --theme-black-25: #bdc0c7;
+    --default-pad: 20px;
 }
 
 body {
@@ -24,22 +25,46 @@ body {
 }
 
 /* -----------------LAYOUT -------------------*/
-.header > div {
+.header {
     height: 400px;
-    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header > div {
+    flex: 1;
+    width: 100%;
     margin: auto;
     text-align: center;
     
     display: flex;
-    justify-content: center;
+    gap: 50px;
     align-items: center;
+    justify-content: center;
+}
+
+.header > div:first-of-type {
+    flex: 0
+}
+
+div.button-tray {
+    align-items: end;
+    padding: var(--default-pad) 0;
+}
+
+.button-tray > button {
+    display: flex;
+}
+
+.button-tray-item > img {
+    height: 40px;
 }
 
 /* ---------------- STYLES -------------------*/
 * {
     padding: 0;
     margin: 0;
-    border: solid 1px red;
+    /* border: solid 1px red; */
 }
 
 /* HEADER MODULE */
@@ -51,4 +76,32 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: bottom;
+    filter: contrast(200%);
+}
+
+.header > div {
+    backdrop-filter: blur(4px);
+}
+
+.button-tray > button {
+    border: none;
+    background-color: transparent;
+    filter: invert(0.6);
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.button-tray > button:hover {
+    scale: 1.2;
+    filter: invert(0.82);
+}
+
+.button-tray > button:active {
+    scale: 1;
+    filter: invert(0.82);
+}
+
+/* HOME MODULE */
+.home-content {
+    background-color: #00aa00;
 }
