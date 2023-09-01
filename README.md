@@ -13,8 +13,6 @@ Lesson covering modules and webpack
 - [ ] Try out three.js: load an obj or gltf file of avatar / animals
 
 ## Newly-learned concepts from Activity
-- html: file input element
-- css: opacity, file selector button 
-- js: Form data object
-- js: preventing default behavior
-- js: this
+- setting up webpack
+- dependencies
+- using modules
