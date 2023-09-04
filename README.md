@@ -16,3 +16,9 @@ Lesson covering modules and webpack
 - setting up webpack
 - dependencies
 - using modules
+
+## Asset Sources
+Font - https://github.com/IdreesInc/Minecraft-Font
+Food Images - Minecraft Fandom Page
+Background-cottage - by jasperjules via tenor.com
+Steve - "Minecraft - Steve" (https://skfb.ly/6RsFO) by Vincent Yanez

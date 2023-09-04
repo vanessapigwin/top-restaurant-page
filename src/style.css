@@ -25,6 +25,8 @@ body {
 }
 
 /* -----------------LAYOUT -------------------*/
+
+/* HEADER MODULE */
 .header {
     height: 400px;
     display: flex;
@@ -102,6 +104,3 @@ div.button-tray {
 }
 
 /* HOME MODULE */
-.home-content {
-    background-color: #00aa00;
-}
