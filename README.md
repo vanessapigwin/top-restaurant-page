@@ -23,3 +23,6 @@ Font - https://github.com/IdreesInc/Minecraft-Font
 Food Images - Minecraft Fandom Page
 Background-cottage - by jasperjules via tenor.com
 Steve - "Minecraft - Steve" (https://skfb.ly/6RsFO) by Vincent Yanez
+Sword - <a target="_blank" href="https://icons8.com/icon/l4qWS2U4Ib7C/minecraft-sword">Minecraft Sword</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+Diamond - <a target="_blank" href="https://icons8.com/icon/yJ3yOJg2Y3xH/minecraft-diamond">Minecraft Diamond</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/57696/pixel-heart">Pixel Heart</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

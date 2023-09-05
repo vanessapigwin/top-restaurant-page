@@ -26,14 +26,15 @@ body {
 
 /* -----------------LAYOUT -------------------*/
 
-/* HEADER MODULE */
+/* HEADER  and FOOTER MODULE */
 .header {
     height: 400px;
     display: flex;
     flex-direction: column;
 }
 
-.header > div {
+.header > div,
+.footer {
     flex: 1;
     width: 100%;
     margin: auto;
@@ -49,16 +50,18 @@ body {
     flex: 0
 }
 
-div.button-tray {
-    align-items: end;
-    padding: var(--default-pad) 0;
+.footer {
+    margin-top: var(--default-pad);
+    padding: 10px 0;
+    gap: var(--default-pad);
 }
 
 .button-tray > button {
     display: flex;
 }
 
-.button-tray-item > img {
+.button-tray-item > img,
+.footer > a > img {
     height: 40px;
 }
 
@@ -69,30 +72,50 @@ div.button-tray {
     max-width: 900px;
     display: flex;
     flex-direction: column;
+    gap: calc(2*var(--default-pad));
 }
 
-.hero,
-.hero-desc {
+.hero-desc,
+.card-holder,
+.quote {
     display: flex;
     flex-direction: column;
     gap: var(--default-pad);
 }
 
-.hero {
+.card-holder {
     padding: 5%;
+    gap: calc(2*var(--default-pad));
+    align-items: center;
+}
+
+.card-holder > .card {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: var(--default-pad);
+    align-items: center;
+    text-align: center;
+    gap: var(--default-pad)
+}
+
+.cardImg {
+    flex: none;
+    height: auto;
+    width: 100px;
+    max-height: 200px;
 }
 
 @media only screen and (min-width: 900px) {
-    .hero {
-        display: flex;
+    .card-holder.pitch-area,
+    .card-holder.review-area {
         flex-direction: row;
+        align-items: start;
     }
 
-    canvas {
-        height: 200px;
+    .card-holder.hero {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 }
 
@@ -100,7 +123,13 @@ div.button-tray {
 * {
     padding: 0;
     margin: 0;
+    font-family: 'MCfont', 'Courier New', Courier, monospace;
     /* border: solid 1px red; */
+}
+
+button {
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
 }
 
 /* HEADER MODULE */
@@ -123,8 +152,6 @@ div.button-tray {
     border: none;
     background-color: transparent;
     filter: invert(0.6);
-    transition: 0.4s ease-in-out;
-    cursor: pointer;
 }
 
 .button-tray > button:hover {
@@ -140,14 +167,48 @@ div.button-tray {
 /* HOME MODULE */
 .home-content {
     font-family: 'MCfont', 'Courier New', Courier, monospace;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+}
+
+.home-content > div {
+    border-radius: 10px;
 }
 
 .hero {
     background-color: var(--theme-white);
-    border-radius: 10px;
+    color: var(--theme-black-100);
+    border: solid 3px var(--primary);
 }
 
 .pitch-area {
     background-color: var(--primary);
+    color: var(--theme-white)
+}
+
+.title {
+    font-family: 'MCfontBold', 'Courier New', Courier, monospace;
+}
+
+.review-area {
+    color: var(--theme-black-100);
+    background-color: var(--theme-white);
+}
+
+#book {
+    font-family: 'MCfont', 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+    margin: auto;
+    color: var(--theme-white);
+    background-color: var(--theme-black-50);
+    height: 50px;
+    width: 200px;
+}
+
+#book:hover {
+    scale: 1.05
+}
+
+.footer {
+    background-color: var(--theme-black-100);
+    color: var(--theme-white);
 }

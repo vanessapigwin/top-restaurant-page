@@ -1,83 +1,17 @@
-import * as THREE from 'three';
-import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
-import myModel from './models/steve.glb';
-
-const renderModel = () => {
-    // three js model components
-    let canvas = document.createElement('canvas');
-    var model;
-    const scene = new THREE.Scene();
-    const loader = new GLTFLoader();
-    const renderer = new THREE.WebGLRenderer({
-        antialias: true,
-        alpha: true
-    });
-    const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
-    const light = new THREE.AmbientLight(0xFFFFFF, 3);
-
-    const render = (time) => {
-        time *= 0.001;
-        if (model) {
-            model.rotation.y = time;
-            renderer.render(scene, camera);
-            requestAnimationFrame(render);
-        }
-    }
-
-    const dispose = (e) => {
-        if (scene.geometry)
-            scene.geometry.dispose();
-
-        if (scene.renderer) {
-            renderer.renderLists.dispose();
-            scene.renderer.dispose();
-        }
-        if (scene.camera)
-            scene.camera.dispose();
-
-        if (scene.loader)
-            scene.loader.dispose();
-        
-        if (scene.light)
-            scene.light.dispose();
-    }
-
-    // three js model component settings
-    camera.position.set(0, 10, 25);
-    light.position.set( 5, 10, 2 );
-
-    loader.load(myModel, (gltf) => {
-        model = gltf.scene;
-        scene.add(model);
-        scene.add(light);
-        render();
-    });
-
-    requestAnimationFrame(render);
-
-    canvas = renderer.domElement;
-    return {
-        canvas,
-        dispose
-    }
-}
-
-const makeCardHolder = () => {
-    const cardHolder = document.createElement('div');
-    cardHolder.textContent = 'sadasdsad';
-    cardHolder.classList.add('pitch-area');
-    return cardHolder
-}
+import {renderModel, makeCardHolder} from './components';
+import diamondIcon from './icons/diamond.png';
+import swordIcon from './icons/sword.png';
+import heartIcon from './icons/heart.png';
+import critic from './icons/critic.png';
 
 const makeHome = () => {
-    const homeDiv = document.createElement('div');
+    // literally the hero area
     const heroDiv = document.createElement('div');
     const heroText = document.createElement('div');
     const p1 = document.createElement('p');
     const p2 = document.createElement('p');
-
-    homeDiv.classList.add('home-content');
-    heroDiv.classList.add('hero');
+    
+    heroDiv.classList.add('hero', 'card-holder');
     heroText.classList.add('hero-desc');
 
     p1.textContent = 'After years of exploration, village hopping, monster hunting, founder \
@@ -85,20 +19,67 @@ const makeHome = () => {
     p2.textContent = 'Steve\'s Cottage prides itself in elevating the experience of\
     cabin dining. Experience a whole new kind of enchantment.'
 
-    // three js components, card holder
     const canvas = renderModel();
     const dispose = () => canvas.dispose();
-
-    const pitchArea = makeCardHolder();
-    console.log(pitchArea)
 
     heroText.appendChild(p1);
     heroText.appendChild(p2);
     heroDiv.appendChild(heroText);
     heroDiv.append(canvas.canvas);
 
+    // pitch cards
+    const cardData = {
+        'heart': {
+            'img': heartIcon,
+            'subtitle': 'Healing',
+            'details': 'Our food fills you and heal you. '
+        },
+        'sword': {
+            'img': swordIcon,
+            'subtitle': 'Free Range',
+            'details': 'We don\'t keep our produce jammed in redstone pens.'
+        },
+        'diamond': {
+            'img': diamondIcon,
+            'subtitle': 'Safe',
+            'details': 'Guaranteed free from pillagers, witches, zombies and creepers'
+        }
+    };
+    const pitchArea = makeCardHolder(cardData);
+    pitchArea.classList.add('pitch-area');
+
+    // review
+    const reviewArea = document.createElement('div');
+    const reviewText = document.createElement('div');
+    const reviewImg = document.createElement('img');
+    const reviewName = document.createElement('div');
+    const reviewDetails = document.createElement('div');
+    reviewArea.classList.add('card-holder', 'review-area');
+    reviewText.classList.add('quote');
+    reviewName.classList.add('title');
+    reviewImg.classList.add('cardImg');
+    reviewImg.src = critic;
+    reviewDetails.textContent = 'Steve\'s cooking reminds me so much of my village. It\'s almost\
+         as if the produce came from the village itself. 5/5, will visit again!';
+    reviewName.textContent = 'Gordon, Village Librarian';
+    reviewText.appendChild(reviewDetails);
+    reviewText.appendChild(reviewName);
+    reviewArea.appendChild(reviewImg);
+    reviewArea.appendChild(reviewText);
+
+    // book button
+    const bookButton = document.createElement('button');
+    bookButton.textContent = 'Book a table';
+    bookButton.id = 'book'; 
+
+    // append all elements
+    const homeDiv = document.createElement('div');
+    homeDiv.classList.add('home-content');
+
     homeDiv.appendChild(heroDiv);
     homeDiv.appendChild(pitchArea);
+    homeDiv.appendChild(reviewArea);
+    homeDiv.appendChild(bookButton);
 
     return {
         homeDiv,
