@@ -50,22 +50,24 @@ const makeHeader = () => {
 
     const loadHome = () => {
         clearContents();
-        document.body.appendChild(home);
+        document.body.appendChild(home.homeDiv);
     }
 
     const loadMenu = () => {
+        home.dispose();
         clearContents();
         document.body.appendChild(menu);
     }
 
     const loadContact = () => {
+        home.dispose();
         clearContents();
         document.body.appendChild(contact);
     }
 
     // initialized content on load
     document.body.appendChild(header);
-    document.body.appendChild(home);
+    document.body.appendChild(home.homeDiv);
     document.querySelector('#home').addEventListener('click', loadHome);
     document.querySelector('#menu').addEventListener('click', loadMenu);
     document.querySelector('#contact').addEventListener('click', loadContact);

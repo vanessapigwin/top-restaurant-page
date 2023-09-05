@@ -10,12 +10,13 @@ Lesson covering modules and webpack
 - [ ] Deploy to github using [this workflow](https://gist.github.com/cobyism/4730490)
 
 ## Optional Stuff
-- [ ] Try out three.js: load an obj or gltf file of avatar / animals
+- [x] Try out three.js: load an obj or gltf file of avatar / animals
 
 ## Newly-learned concepts from Activity
 - setting up webpack
 - dependencies
 - using modules
+- garbage in memory (from three.js)
 
 ## Asset Sources
 Font - https://github.com/IdreesInc/Minecraft-Font
