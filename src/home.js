@@ -2,12 +2,7 @@ import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import myModel from './models/steve.glb';
 
-const makeHome = () => {
-    const homeDiv = document.createElement('div');
-
-    homeDiv.classList.add('home-content');
-    homeDiv.textContent = 'HELLO FROM HOME';
-
+const renderModel = () => {
     // three js model components
     let canvas = document.createElement('canvas');
     var model;
@@ -48,7 +43,6 @@ const makeHome = () => {
     }
 
     // three js model component settings
-    // scene.background = new THREE.Color( 0xf6eedc );
     camera.position.set(0, 10, 25);
     light.position.set( 5, 10, 2 );
 
@@ -62,7 +56,49 @@ const makeHome = () => {
     requestAnimationFrame(render);
 
     canvas = renderer.domElement;
-    homeDiv.appendChild(canvas);
+    return {
+        canvas,
+        dispose
+    }
+}
+
+const makeCardHolder = () => {
+    const cardHolder = document.createElement('div');
+    cardHolder.textContent = 'sadasdsad';
+    cardHolder.classList.add('pitch-area');
+    return cardHolder
+}
+
+const makeHome = () => {
+    const homeDiv = document.createElement('div');
+    const heroDiv = document.createElement('div');
+    const heroText = document.createElement('div');
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+
+    homeDiv.classList.add('home-content');
+    heroDiv.classList.add('hero');
+    heroText.classList.add('hero-desc');
+
+    p1.textContent = 'After years of exploration, village hopping, monster hunting, founder \
+    Steve realized there is more to just defeating the Ender Dragon - good food.';
+    p2.textContent = 'Steve\'s Cottage prides itself in elevating the experience of\
+    cabin dining. Experience a whole new kind of enchantment.'
+
+    // three js components, card holder
+    const canvas = renderModel();
+    const dispose = () => canvas.dispose();
+
+    const pitchArea = makeCardHolder();
+    console.log(pitchArea)
+
+    heroText.appendChild(p1);
+    heroText.appendChild(p2);
+    heroDiv.appendChild(heroText);
+    heroDiv.append(canvas.canvas);
+
+    homeDiv.appendChild(heroDiv);
+    homeDiv.appendChild(pitchArea);
 
     return {
         homeDiv,

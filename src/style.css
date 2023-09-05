@@ -62,6 +62,40 @@ div.button-tray {
     height: 40px;
 }
 
+/* HOME MODULE */
+.home-content {
+    padding: calc(2*var(--default-pad)) 5%;
+    margin: auto;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero,
+.hero-desc {
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-pad);
+}
+
+.hero {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-pad);
+}
+
+@media only screen and (min-width: 900px) {
+    .hero {
+        display: flex;
+        flex-direction: row;
+    }
+
+    canvas {
+        height: 200px;
+    }
+}
+
 /* ---------------- STYLES -------------------*/
 * {
     padding: 0;
@@ -104,3 +138,16 @@ div.button-tray {
 }
 
 /* HOME MODULE */
+.home-content {
+    font-family: 'MCfont', 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+}
+
+.hero {
+    background-color: var(--theme-white);
+    border-radius: 10px;
+}
+
+.pitch-area {
+    background-color: var(--primary);
+}
