@@ -16,6 +16,7 @@ Lesson covering modules and webpack
 - setting up webpack
 - dependencies
 - using modules
+- using URL assets instead of asset/resouce import
 - clean garbage in memory (from three.js)
 - conscious effort in naming classes and making factories for reuse
 

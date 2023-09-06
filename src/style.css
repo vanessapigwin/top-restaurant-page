@@ -26,7 +26,7 @@ body {
 
 /* -----------------LAYOUT -------------------*/
 
-/* HEADER  and FOOTER MODULE */
+/* HEADER and FOOTER MODULE */
 .header {
     height: 400px;
     display: flex;
@@ -65,8 +65,8 @@ body {
     height: 40px;
 }
 
-/* HOME MODULE */
-.home-content {
+/* HOME and MENU MODULE*/
+.content {
     padding: calc(2*var(--default-pad)) 5%;
     margin: auto;
     max-width: 900px;
@@ -148,6 +148,10 @@ button {
     backdrop-filter: blur(4px);
 }
 
+.button-tray {
+    padding-top: 10px;
+}
+
 .button-tray > button {
     border: none;
     background-color: transparent;
@@ -164,13 +168,13 @@ button {
     filter: invert(0.82);
 }
 
-/* HOME MODULE */
-.home-content {
+/* HOME and MENU MODULE */
+.content {
     font-family: 'MCfont', 'Courier New', Courier, monospace;
-    font-size: 1.3rem;
 }
 
-.home-content > div {
+.content > div {
+    font-size: 1.3rem;
     border-radius: 10px;
 }
 
@@ -180,7 +184,8 @@ button {
     border: solid 3px var(--primary);
 }
 
-.pitch-area {
+.pitch-area,
+.menu-title {
     background-color: var(--primary);
     color: var(--theme-white)
 }
@@ -189,7 +194,8 @@ button {
     font-family: 'MCfontBold', 'Courier New', Courier, monospace;
 }
 
-.review-area {
+.review-area,
+.menu-list {
     color: var(--theme-black-100);
     background-color: var(--theme-white);
 }

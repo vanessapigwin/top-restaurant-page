@@ -74,7 +74,7 @@ const makeHome = () => {
 
     // append all elements
     const homeDiv = document.createElement('div');
-    homeDiv.classList.add('home-content');
+    homeDiv.classList.add('home-content', 'content');
 
     homeDiv.appendChild(heroDiv);
     homeDiv.appendChild(pitchArea);
