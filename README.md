@@ -5,9 +5,9 @@ Lesson covering modules and webpack
 - [x] project setup
 - [x] Make tab browsing for home, menu and contact / location work
 - [x] Create home page
-- [ ] Create menu page
-- [ ] Create contact / location page
-- [ ] Deploy to github using [this workflow](https://gist.github.com/cobyism/4730490)
+- [x] Create menu page
+- [x] Create contact / location page
+- [x] Deploy to github using [this workflow](https://gist.github.com/cobyism/4730490)
 
 ## Optional Stuff
 - [x] Try out three.js: load an obj or gltf file of avatar / animals
