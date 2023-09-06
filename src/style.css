@@ -105,6 +105,11 @@ body {
     max-height: 200px;
 }
 
+.feature-img {
+    object-fit: contain;
+    width: 100%;
+}
+
 @media only screen and (min-width: 900px) {
     .card-holder.pitch-area,
     .card-holder.review-area {
@@ -198,6 +203,10 @@ button {
 .menu-list {
     color: var(--theme-black-100);
     background-color: var(--theme-white);
+}
+
+.menu-title {
+    border: 4mm ridge var(--primary)
 }
 
 #book {
