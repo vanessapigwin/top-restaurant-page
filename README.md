@@ -1,6 +1,8 @@
 # The Odin Project: TOP Restaurant
 Lesson covering modules and webpack
 
+# Live: https://vanessapigwin.github.io/top-restaurant-page/
+
 ## Goal / To Do
 - [x] project setup
 - [x] Make tab browsing for home, menu and contact / location work
